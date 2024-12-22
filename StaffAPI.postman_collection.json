@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "0ea27812-fb31-4811-8e92-efca341a0be4",
+		"name": "StaffAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33455627"
+	},
+	"item": [
+		{
+			"name": "staffMemberCreate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstName\": \"Tester1\",\r\n  \"lastName\": \"Shevchenko\",\r\n  \"middleName\": \"Grigorovich\",\r\n  \"type\": \"Sales\",\r\n  \"joinDate\": \"2020-01-01\",\r\n  \"baseSalary\": 1500\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/staff/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"staff",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "staffMemberRelationCreate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/staff/relation/supervisor/:supervisorId/subordinate/:subordinateId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"staff",
+						"relation",
+						"supervisor",
+						":supervisorId",
+						"subordinate",
+						":subordinateId"
+					],
+					"variable": [
+						{
+							"key": "supervisorId",
+							"value": "1"
+						},
+						{
+							"key": "subordinateId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getStaffMembersWithFilter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/staff/filter?firstName=John&lastName=Doe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"staff",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "John"
+						},
+						{
+							"key": "lastName",
+							"value": "Doe"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findRelationBySupervisor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/staff/relation/supervisor/:supervisorId/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"staff",
+						"relation",
+						"supervisor",
+						":supervisorId",
+						""
+					],
+					"variable": [
+						{
+							"key": "supervisorId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findRelationBySubordinate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/staff/relation/subordinate/:subordinateId/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"staff",
+						"relation",
+						"subordinate",
+						":subordinateId",
+						""
+					],
+					"variable": [
+						{
+							"key": "subordinateId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSalary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/staff/salary?id=1&date=2024-01-01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"staff",
+						"salary"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "date",
+							"value": "2024-01-01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllStaffSalaries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/staff/salaryAll?date=2024-01-01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"staff",
+						"salaryAll"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2024-01-01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTotalSalary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/staff/salaryTotal?date=2024-01-01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"staff",
+						"salaryTotal"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2024-01-01"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
